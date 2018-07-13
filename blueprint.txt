@@ -1,0 +1,20 @@
+Pyghmi - Python library for IPMI
+
+Redfish - https://www.dmtf.org/standards/redfish
+DMTF’s Redfish® is a standard API designed to deliver simple and secure management for converged, hybrid IT and the Software Defined Data Center (SDDC). Both human readable and machine capable, Redfish leverages common Internet and web services standards to expose information directly to the modern tool chain.
+
+
+Redfish vs IPMI 
+IPMI is a pretty old protocol and is not API friendly, provides limited functionality and lacks security and reliability. Whereas Redfish overcomes these challenges and provides a standard DTMF API which works on multiple hardware vendors like HP, Dell. Most importantly, Redfish's API based support means that it can provide HTTP Error codes against an obscure error message in IPMI. 
+Also, Upgrading/patching IPMI also becomes a huge challenge considering they would use different security and authentication mechanisms which Redfish/DTMF standards would perform seamlessly since it works over HTTP/HTTPS protocols
+
+
+Proposal: 
+
+To develop new OOB driver for Drydock using Redfish. As part of this proposal, we would want to enhance the current OOB pyghmi driver functionalities to be supported by redfish driver - set_bootdev, get_bootdev, set_power off/on, get_power (Existing Actions - SetNodeBoot, PowerOffNode, PowerOnNode, PowerCycleNode, InterrogateOob) inorder to leverage the Redfish capabalities and also provide an abstraction layer to support multiple libraries/drivers for Drydock. 
+
+In order to achieve this, we would reuse the existing Redfish client python libraries available for Dell, HP in the implementation.
+
+
+https://github.com/dell/iDRAC-Redfish-Scripting/
+https://github.com/HewlettPackard/python-ilorest-library 
