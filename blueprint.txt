@@ -1,3 +1,8 @@
+Authors:
+Hemanth Kumar Nakkina <nh863p@att.com>
+Gurpreet Singh <gs838s@att.com>
+Pradeep Kumar K.S. <pk5294@att.com>
+
 Pyghmi - Python library for IPMI
 
 Redfish - https://www.dmtf.org/standards/redfish
